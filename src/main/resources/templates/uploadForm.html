@@ -1,0 +1,136 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body bgcolor="#808080">
+
+	<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+
+	<div>
+		<form method="POST" enctype="multipart/form-data" action="/">
+			<style>
+				table {
+					width: 800px; /* Ширина таблицы */
+					border: 50px solid lightslategray; /* Рамка вокруг таблицы */
+					margin: auto; /* Выравниваем таблицу по центру окна  */
+				}
+				td {
+					text-align: right;
+				}
+			</style>
+			<table>
+				<tr><td>Выберите файл для загрузки</td><td><input type="file" name="file" /></td></tr>
+				<tr><td>Загрузите файл</td><td><input type="submit" value="Загрузить" /></td></tr>
+			</table>
+		</form>
+	</div>
+	<div>
+		<form method="GET" action="/parse">
+			<style>
+				table {
+					width: 800px; /* Ширина таблицы */
+					border: 50px solid lightslategray; /* Рамка вокруг таблицы */
+					margin: auto; /* Выравниваем таблицу по центру окна  */
+				}
+				td {
+					text-align: right;
+				}
+			</style>
+			<table>
+				<tr><td>Распарсить выбранный файл</td>
+					<td>
+						<ul>
+							<li th:each="file : ${files}">
+								<a th:href="${file}" th:text="${file}" />
+							</li>
+						</ul>
+					</td>
+				</tr>
+				<tr><td></td><td><input type="submit" value="Выполнить" /></td></tr>
+			</table>
+
+		</form>
+	</div>
+	<div>
+		<form method="Get" enctype="multipart/form-data" action="/delete">
+			<style>
+				table {
+					width: 800px; /* Ширина таблицы */
+					border: 50px solid lightslategray; /* Рамка вокруг таблицы */
+					margin: auto; /* Выравниваем таблицу по центру окна  */
+				}
+				td {
+					text-align: right;
+				}
+			</style>
+			<table>
+				<tr><td>Удалить загруженный файл</td>
+					<td>
+						<div>
+					<ul>
+						<li th:each="file : ${files}">
+							<a th:href="${file}" th:text="${file}" />
+						</li>
+					</ul>
+				</div>
+					</td>
+				</tr>
+				<tr><td></td><td><input type="submit" value="Удалить" /></td></tr>
+			</table>
+		</form>
+	</div>
+	<div>
+		<form method="GET" enctype="multipart/form-data" action="/graph">
+			<style>
+				table {
+					width: 800px; /* Ширина таблицы */
+					border: 50px solid lightslategray; /* Рамка вокруг таблицы */
+					margin: auto; /* Выравниваем таблицу по центру окна  */
+				}
+				td {
+					text-align: right;
+				}
+			</style>
+			<table>
+				<tr><td>Вычислить централи и построить граф</td></tr>
+				<tr><td></td><td><input type="submit" value="Выполнить" /></td></tr>
+
+			</table>
+		</form>
+	</div>
+    <div>
+        <form method="GET" enctype="multipart/form-data" action="/mainPage">
+            <style>
+                table {
+                    width: 800px; /* Ширина таблицы */
+                    border: 50px solid lightslategray; /* Рамка вокруг таблицы */
+                    margin: auto; /* Выравниваем таблицу по центру окна  */
+                }
+                td {
+                    text-align: right;
+                }
+            </style>
+            <table>
+                <tr><td>Перейти на главную страницу</td></tr>
+                <tr><td></td><td><input type="submit" value="Выполнить" /></td></tr>
+            </table>
+        </form>
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
