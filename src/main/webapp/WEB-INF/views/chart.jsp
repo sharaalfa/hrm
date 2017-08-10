@@ -104,7 +104,12 @@
         text-align: center;
     }
 </style>
-
+<div class="container">
+    <div class="col-md-10">
+        <h4>Центральность по посредничеству</h4>
+        <p>Мера важности подразделения в коммуникациях других поразделений</p>
+    </div>
+</div>
 
 <table class="table">
     <tr>

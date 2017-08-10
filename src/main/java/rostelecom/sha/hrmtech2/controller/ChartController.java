@@ -12,16 +12,22 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import rostelecom.sha.hrmtech.HTMLParser;
+import rostelecom.sha.hrmtech.ValuesArray;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
 public class ChartController {
+
+    private Process proccess;
+
+
     private static final Logger log = Logger.getLogger(ChartController.class);
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -147,12 +153,92 @@ public class ChartController {
             return "redirect:/";
         }
         return "/chart";
+
+
     }
 
+    @RequestMapping(value="/tableInMax")
+    public ModelAndView listIn(ModelAndView model) {
+        try {
+            String command =
+                    "bash /home/sha/Yandex.Disk/Java_study/hrmtech2/bash" +
+                            "/runPyCreateListMaxIn.sh";
+            proccess = Runtime.getRuntime().exec(command);
+            if (proccess.waitFor() == 0) {
+                List<String> list = new ArrayList<>();
+                for (String str: new ValuesArray().listTen("in.xml")) {
+                    list.add(str);
+                    model.addObject("list", list);
+                    model.setViewName("tableInMax");
+                }
+            }
 
+        } catch (InterruptedException e) {
+            log.error("ошибка в рантайме");
+        } catch (NullPointerException e) {
+            log.error("нет значений");
+        } catch (IOException e) {
+            log.error("bash не работает");
+        }
 
+        return model;
 
+    }
+    @RequestMapping(value="/chartMax")
+    public ModelAndView list(ModelAndView model) {
+        try {
+            String command =
+                    "bash /home/sha/Yandex.Disk/Java_study/hrmtech2/bash" +
+                            "/runPyCreateListMax.sh";
+            proccess = Runtime.getRuntime().exec(command);
+            if (proccess.waitFor() == 0) {
+                List<String> list = new ArrayList<>();
+                for (String str: new ValuesArray().listTen("betweenness.xml")) {
+                    list.add(str);
+                }
+                model.addObject("list", list);
+                model.setViewName("chartMax");
+            }
 
+        } catch (InterruptedException e) {
+            log.error("ошибка в рантайме");
+        } catch (NullPointerException e) {
+            log.error("нет значений");
+        } catch (IOException e) {
+            log.error("не работает bash");
+        }
+
+        return model;
+
+    }
+
+    @RequestMapping(value="/tableMaxOut")
+    public ModelAndView out(ModelAndView model) {
+        try {
+            String command =
+                    "bash /home/sha/Yandex.Disk/Java_study/hrmtech2/bash" +
+                            "/runPyCreateListMaxOut.sh";
+            proccess = Runtime.getRuntime().exec(command);
+            if (proccess.waitFor() == 0) {
+                List<String> list = new ArrayList<>();
+                for (String str: new ValuesArray().listTen("out.xml")) {
+                    list.add(str);
+                }
+                model.addObject("list", list);
+                model.setViewName("tableMaxOut");
+            }
+
+        } catch (InterruptedException e) {
+            log.error("ошибка в рантайме");
+        } catch (NullPointerException e) {
+            log.error("нет значений");
+        } catch (IOException e) {
+            log.error("не работает bash");
+        }
+
+        return model;
+
+    }
 
 
 

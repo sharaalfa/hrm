@@ -43,16 +43,16 @@
   <div class="row">
 	<div class="col-md-4">
 		<h2>Общий график</h2>
-		<p>По централям</p>
+		<p>По центральности</p>
 		<p>
 			<a class="btn btn-default" href="/chart" role="button">View details</a>
 		</p>
 	</div>
 	<div class="col-md-4">
-		<h2>График первых десяти значимых</h2>
-		<p>По централям</p>
+		<h2>Таблица первых десяти значимых</h2>
+		<p>По центральности</p>
 		<p>
-			<a class="btn btn-default" href="#" role="button">View details</a>
+			<a class="btn btn-default" href="/chartMax" role="button">View details</a>
 		</p>
 	</div>
 	<div class="col-md-4">
@@ -87,6 +87,38 @@
 			</div>
 
 	</table>
+	<div class="container">
+		<div class="col-md-10">
+			<h4>Центральность по посредничеству</h4>
+			<p>Мера важности подразделения в коммуникациях других поразделений</p>
+		</div>
+	</div>
+
+
+	<table class="table">
+		<tr>
+
+			<div>
+				<td><a> </a></td>
+			</div>
+
+	</table>
+	<table class="table">
+		<tr>
+
+			<div>
+				<td><a> </a></td>
+			</div>
+
+	</table>
+	<div class="container">
+		<div class="col-md-10">
+			<h4>Центральность по левому собственному вектору</h4>
+			<h5>Степень престижа, источник активности</h5>
+			<p>Степень важности данного подразделения, которая пропорциональна степени важности подразделений,
+				с которым он связан</p>
+		</div>
+	</div>
 	<table class="table">
 		<tr>
 
@@ -97,6 +129,48 @@
 	</table>
 
 	<table class="table">
+		<tr>
+
+			<div>
+				<td><a> </a></td>
+			</div>
+
+	</table>
+	<div class="container">
+		<div class="col-md-10">
+			<h4>Центральность по правому собственному вектору</h4>
+			<h5>Количество участия, центральность участия</h5>
+			<p>Степень важности данного подразделения, которая пропорциональна степени важности подразделений,
+				с которым он связан</p>
+		</div>
+	</div>
+	<table class="table">
+		<tr>
+
+			<div>
+				<td><a> </a></td>
+			</div>
+
+	</table>
+	<table class="table">
+		<tr>
+
+			<div>
+				<td><a> </a></td>
+			</div>
+
+	</table>
+	<table class="table">
+	<tr>
+
+		<div>
+			<td><a> </a></td>
+		</div>
+
+    </table>
+
+	<table class="table">
+
 
 	 <div>
 		 <td>

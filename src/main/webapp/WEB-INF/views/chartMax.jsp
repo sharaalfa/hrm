@@ -1,81 +1,87 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Графики</title>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-
-    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-    <script
-            src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.9/highcharts.js"></script>
-    <script>
-
-        $(document).ready(function () {
-
-            // Build the chart
-            Highcharts.chart('container', {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie'
-                },
-                title: {
-                    text: 'Browser market shares January, 2015 to May, 2015'
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: false
-                        },
-                        showInLegend: true
-                    }
-                },
-                series: [{
-                    name: 'Brands',
-                    colorByPoint: true,
-                    data: [{
-                        name: 'Microsoft Internet Explorer',
-                        y: $.getJSON('/data.json', function (data) {
-                            console.log(data)
-                        })
-                    }, {
-                        name: 'Chrome',
-                        y: 24.03,
-                        sliced: true,
-                        selected: true
-                    }, {
-                        name: 'Firefox',
-                        y: 10.38
-                    }, {
-                        name: 'Safari',
-                        y: 4.77
-                    }, {
-                        name: 'Opera',
-                        y: 0.91
-                    }, {
-                        name: 'Proprietary or Undetectable',
-                        y: 0.2
-                    }]
-                }]
-            });
-        });
-    </script>
+    <title>Менеджер отчетов</title>
 </head>
-<body>
+<body bgcolor="#808080">
+<div align="center">
+    <h1>Центральность по посредничеству</h1>
+    <table border="1">
+        <th>Номер подразделения</th>
+        <th>Нименование подразделения</th>
+        <th>Значение ценральности</th>
+            <tr>
+                <td>${list.get(0)}</td>
+                <td>${list.get(1)}</td>
+                <td>${list.get(2)}</td>
 
+            </tr>
+            <tr>
+                <td>${list.get(3)}</td>
+                <td>${list.get(4)}</td>
+                <td>${list.get(5)}</td>
+
+            </tr>
+            <tr>
+                <td>${list.get(6)}</td>
+                <td>${list.get(7)}</td>
+                <td>${list.get(8)}</td>
+
+            </tr>
+            <tr>
+                <td>${list.get(9)}</td>
+                <td>${list.get(10)}</td>
+                <td>${list.get(11)}</td>
+
+            </tr>
+            <tr>
+                <td>${list.get(12)}</td>
+                <td>${list.get(13)}</td>
+                <td>${list.get(14)}</td>
+
+            </tr>
+            <tr>
+                <td>${list.get(15)}</td>
+                <td>${list.get(16)}</td>
+                <td>${list.get(17)}</td>
+
+            </tr>
+            <tr>
+                <td>${list.get(18)}</td>
+                <td>${list.get(19)}</td>
+                <td>${list.get(20)}</td>
+
+            </tr>
+
+            <tr>
+                <td>${list.get(21)}</td>
+                <td>${list.get(22)}</td>
+                <td>${list.get(23)}</td>
+
+            </tr>
+            <tr>
+                <td>${list.get(24)}</td>
+                <td>${list.get(25)}</td>
+                <td>${list.get(26)}</td>
+
+            </tr>
+            <tr>
+                <td>${list.get(27)}</td>
+                <td>${list.get(28)}</td>
+                <td>${list.get(29)}</td>
+
+            </tr>
+
+
+
+    </table>
+</div>
+<div id="container"></div>
 <style>
     table {
         width: 300px; /* Ширина таблицы */
@@ -86,13 +92,18 @@
         text-align: center;
     }
 </style>
-
+<div class="container">
+    <div class="col-md-10">
+        <h4>Центральность по посредничеству</h4>
+        <p>Мера важности подразделения в коммуникациях других поразделений</p>
+    </div>
+</div>
 
 <table class="table">
     <tr>
 
         <div>
-            <td><a href="/In">Следующий график</a></td>
+            <td><a href="/tableInMax">Следующая таблица</a></td>
         </div>
 
 </table>
@@ -104,6 +115,6 @@
         </div>
 
 </table>
-
 </body>
 </html>
+
