@@ -10,7 +10,7 @@ jupyter-core==4.3.0
 matplotlib==2.0.2
 nbformat==4.3.0
 networkx==1.11
-numpy==1.13.1
+numpy==1.21.0
 pandas==0.20.3
 pathtools==0.1.2
 plot==0.6.1
